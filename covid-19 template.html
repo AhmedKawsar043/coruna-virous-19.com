@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Plugin Test Suite</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <style type="text/css">
+    
+    .container{
+    
+         background : linear-gradient(120deg,pink 50% , orange 50%);
+    }
+    
+    
+    .logo h6{
+    
+          width : 45%;
+          background : radial-gradient(rgba(255,255,255,0.3),ROYALBLUE);
+          font-family: fantasy;
+          font-weight:600;
+          text-align : center;
+          border-radius : 30px;
+          font-family:1rem;
+    }
+    
+    span{
+    
+         font-family : fantasy;
+         font-weight:600;
+         text-align : center;
+         padding : 5px;
+         background : brown;
+         color : white ;
+         border-radius : 15px 5px;
+          box-shadow : 2px 3px 3px 2px rgba(0,0,0,0.2);
+    }
+    
+    .selectbox{
+          
+         width : 60%;
+         font-family : fantasy;
+         font-weight:400;
+         text-align : center;
+         border : none;
+         outline : none ;
+         border-radius : 8px 4px;
+    }
+    
+    input{
+    
+    font-family : fantasy;
+    font-weight:700;
+    text-align : center;
+    border : none;
+    outline : none ;
+    border-radius : 8px 4px;
+    padding : 5px;
+    font-size : 1.2rem;
+    background : linear-gradient(120deg,orange 50% ,pink 50%);
+    color : black;
+    letter-spacing : 1px;
+    box-shadow : 2px 3px 3px 2px rgba(0,0,0,0.3);
+    text-shadow : 3px 3px 3px rgba(0,0,0,0.3)
+    }
+    
+    
+    </style>
+    </head>
+    <body>
+    
+    <div class="container">
+    <div class="row p-2">
+    
+    <div class="col-12 logo">
+          
+         <h6 class="p-3 w-100">Covid-19 Update</h6>
+    </div>
+    <div class="col-12 my-3">
+    
+    <span>Select your country : </span>
+    <select id="SelectBox" class="selectbox bg-info p-2 mt-3 mf-2">
+    <option>Select County</option>
+    <option>Global</option>
+    <option>Bangladesh</option>
+    <option>India</option>
+    <option>Pakistan</option>
+    <option>Nepal</option>
+    <option>Indonesia</option>
+    <option>Oman</option>
+    <option>Qatar</option>
+    <option>Singapore</option>
+    <option>Afghanistan</option>
+    </select>
+    
+    </div>
+    
+    <div class="col-12">
+    <span>Country Name : </span>
+    <input class="my-3" id="Country_name" type="text" name="display" disabled >
+    </div>
+    
+    
+    <div class="col-12">
+    <span>NewConfirmed : </span>
+    <input class="my-3" id="NewConfirmed" type="text" name="display" disabled>
+    </div>
+    
+    
+    
+    <div class="col-12">
+    <span>TotalConfirmed : </span>
+    <input class="my-3" id="TotalConfirmed" type="text" name="display" disabled>
+    </div>
+    
+    
+    <div class="col-12">
+    <span class="col-12">NewDeaths : </span>
+    <input class="my-3" id="NewDeaths" type="text" name="display" disabled>
+    </div>
+    
+    
+    <div class="col-12">
+    <span class="col-12">TotalDeaths : </span>
+    <input class="my-3" id="TotalDeaths" type="text" name="display" disabled>
+    </div>
+    
+    <div class="col-12">
+    <span>NewRecovered : </span>
+    <input class="my-3" id="NewRecovered" type="text" name="display" disabled>
+    </div>
+    
+    <div class="col-12">
+    <span>TotalRecovered : </span>
+    <input class="my-3" id="TotalRecovered" type="text" name="display" disabled>
+    </div>
+    
+    <div class="col-12">
+    <span>date : </span>
+    <input class="my-3" id="date" type="text" name="display" disabled>
+    </div>
+    
+    
+    </div>
+    </div>
+    <script type="text/javascript">
+    
+    
+    let Countryname = document.getElementById("Country_name");
+    let Newconfirmed = document.getElementById("NewConfirmed");
+    let Totalconfirmed = document.getElementById("TotalConfirmed");
+    let Newdeaths = document.getElementById("NewDeaths");
+    let Totaldeaths = document.getElementById("TotalDeaths");
+    let Newrecovered = document.getElementById("NewRecovered");
+    let Totalrecovered = document.getElementById("TotalRecovered");
+    let Time = document.getElementById("date");
+    let Selectbox  = document.getElementById("SelectBox");
+    let h6 = document.querySelector("h6");
+    
+    //---Dynamic-Clock---//
+    
+  /*  setInterval(()=>{
+    let time = new Date() ;
+    
+    let hours = time.getHours();
+    let minutes = time.getMinutes();
+    let seconds = time.getSeconds();
+    
+    const timeshow = hours + " : " + minutes  + " : " + seconds ;
+    
+    Time.value = timeshow;
+    
+    },1000); 
+    */
+    
+  
+   
+    Selectbox.addEventListener("change",()=>{
+    
+     if(Selectbox.value == "Bangladesh"){
+     
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[`${13}`];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "Bangladesh"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[13];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "India"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[76];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "Indonesia"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[77];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "Nepal"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[120];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "Pakistan"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[128];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "Srilanka"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Countries[161];
+       
+       Countryname.value = Mydata.Country ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = Mydata.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+       };
+       
+       if(Selectbox.value == "Global"){
+       
+       fetch('https:api.covid19api.com/summary')
+       .then((apidata)=>{
+       
+       return apidata.json();
+       
+       }).then((covidapi)=>{
+       
+       //console.log(covidapi);
+       const Mydata = covidapi.Global;
+       
+       Countryname.value = "Global" ;
+       Newconfirmed.value = Mydata.NewConfirmed ;
+       Totalconfirmed.value = Mydata.TotalConfirmed ;
+       Newdeaths.value = Mydata.NewDeaths
+       Totaldeaths.value = Mydata.TotalDeaths ;
+       Newrecovered.value = Mydata.NewRecovered ;
+       Totalrecovered.value = Mydata.TotalRecovered ;
+       Time.value = covidapi.Date ;
+       
+       }).catch((error)=>{
+       h6.innerHTML = error;
+       });
+       
+     };
+     
+     if(Selectbox.value == "Oman"){
+     
+     fetch('https:api.covid19api.com/summary')
+     .then((apidata)=>{
+     
+     return apidata.json();
+     
+     }).then((covidapi)=>{
+     
+     //console.log(covidapi);
+     const Mydata = covidapi.Countries[127];
+     
+     Countryname.value = Mydata.Country ;
+     Newconfirmed.value = Mydata.NewConfirmed ;
+     Totalconfirmed.value = Mydata.TotalConfirmed ;
+     Newdeaths.value = Mydata.NewDeaths
+     Totaldeaths.value = Mydata.TotalDeaths ;
+     Newrecovered.value = Mydata.NewRecovered ;
+     Totalrecovered.value = Mydata.TotalRecovered ;
+     Time.value = Mydata.Date ;
+     
+     }).catch((error)=>{
+     h6.innerHTML = error;
+     });
+     
+     };
+     
+     
+     if(Selectbox.value == "Qatar"){
+     
+     fetch('https:api.covid19api.com/summary')
+     .then((apidata)=>{
+     
+     return apidata.json();
+     
+     }).then((covidapi)=>{
+     
+     //console.log(covidapi);
+     const Mydata = covidapi.Countries[137];
+     
+     Countryname.value = Mydata.Country ;
+     Newconfirmed.value = Mydata.NewConfirmed ;
+     Totalconfirmed.value = Mydata.TotalConfirmed ;
+     Newdeaths.value = Mydata.NewDeaths
+     Totaldeaths.value = Mydata.TotalDeaths ;
+     Newrecovered.value = Mydata.NewRecovered ;
+     Totalrecovered.value = Mydata.TotalRecovered ;
+     Time.value = Mydata.Date ;
+     
+     }).catch((error)=>{
+     h6.innerHTML = error;
+     });
+     
+     };
+     
+     
+     if(Selectbox.value == "Singapore"){
+     
+     fetch('https:api.covid19api.com/summary')
+     .then((apidata)=>{
+     
+     return apidata.json();
+     
+     }).then((covidapi)=>{
+     
+     //console.log(covidapi);
+     const Mydata = covidapi.Countries[153];
+     
+     Countryname.value = Mydata.Country ;
+     Newconfirmed.value = Mydata.NewConfirmed ;
+     Totalconfirmed.value = Mydata.TotalConfirmed ;
+     Newdeaths.value = Mydata.NewDeaths
+     Totaldeaths.value = Mydata.TotalDeaths ;
+     Newrecovered.value = Mydata.NewRecovered ;
+     Totalrecovered.value = Mydata.TotalRecovered ;
+     Time.value = Mydata.Date ;
+     
+     }).catch((error)=>{
+     h6.innerHTML = error;
+     });
+     
+     };
+     
+     if(Selectbox.value == "Afghanistan"){
+     
+     fetch('https:api.covid19api.com/summary')
+     .then((apidata)=>{
+     
+     return apidata.json();
+     
+     }).then((covidapi)=>{
+     
+     //console.log(covidapi);
+     const Mydata = covidapi.Countries[0];
+     
+     Countryname.value = Mydata.Country ;
+     Newconfirmed.value = Mydata.NewConfirmed ;
+     Totalconfirmed.value = Mydata.TotalConfirmed ;
+     Newdeaths.value = Mydata.NewDeaths
+     Totaldeaths.value = Mydata.TotalDeaths ;
+     Newrecovered.value = Mydata.NewRecovered ;
+     Totalrecovered.value = Mydata.TotalRecovered ;
+     Time.value = Mydata.Date ;
+     
+     }).catch((error)=>{
+     h6.innerHTML = error;
+     });
+     
+     };
+     
+                 
+  });
+    
+    
+    </script>
+    </body>
+    </html>
