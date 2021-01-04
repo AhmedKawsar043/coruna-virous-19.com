@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Bootstrap Plugin Test Suite</title>
+    <title>bootstrap plugin test suite</title>
     <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <style type="text/css">
     
@@ -16,7 +16,7 @@
     .logo h6{
     
           width : 45%;
-          background : radial-gradient(rgba(255,255,255,0.3),ROYALBLUE);
+          background : radial-gradient(rgba(255,255,255,0.3),royalblue);
           font-family: fantasy;
           font-weight:600;
           text-align : center;
@@ -74,65 +74,65 @@
     
     <div class="col-12 logo">
           
-         <h6 class="p-3 w-100">Covid-19 Update</h6>
+         <h6 class="p-3 w-100">covid-19 update</h6>
     </div>
     <div class="col-12 my-3">
     
-    <span>Select your country : </span>
-    <select id="SelectBox" class="selectbox bg-info p-2 mt-3 mf-2">
-    <option>Select County</option>
-    <option>Global</option>
-    <option>Bangladesh</option>
-    <option>India</option>
-    <option>Pakistan</option>
-    <option>Nepal</option>
-    <option>Indonesia</option>
-    <option>Oman</option>
-    <option>Qatar</option>
-    <option>Singapore</option>
-    <option>Afghanistan</option>
+    <span>select your country : </span>
+    <select id="selectbox" class="selectbox bg-info p-2 mt-3 mf-2">
+    <option>select county</option>
+    <option>global</option>
+    <option>bangladesh</option>
+    <option>india</option>
+    <option>pakistan</option>
+    <option>nepal</option>
+    <option>indonesia</option>
+    <option>oman</option>
+    <option>qatar</option>
+    <option>singapore</option>
+    <option>afghanistan</option>
     </select>
     
     </div>
     
     <div class="col-12">
-    <span>Country Name : </span>
-    <input class="my-3" id="Country_name" type="text" name="display" disabled >
+    <span>country name : </span>
+    <input class="my-3" id="country_name" type="text" name="display" disabled >
     </div>
     
     
     <div class="col-12">
-    <span>NewConfirmed : </span>
-    <input class="my-3" id="NewConfirmed" type="text" name="display" disabled>
+    <span>newconfirmed : </span>
+    <input class="my-3" id="newconfirmed" type="text" name="display" disabled>
     </div>
     
     
     
     <div class="col-12">
-    <span>TotalConfirmed : </span>
-    <input class="my-3" id="TotalConfirmed" type="text" name="display" disabled>
+    <span>totalconfirmed : </span>
+    <input class="my-3" id="totalconfirmed" type="text" name="display" disabled>
     </div>
     
     
     <div class="col-12">
-    <span class="col-12">NewDeaths : </span>
-    <input class="my-3" id="NewDeaths" type="text" name="display" disabled>
+    <span class="col-12">newdeaths : </span>
+    <input class="my-3" id="newdeaths" type="text" name="display" disabled>
     </div>
     
     
     <div class="col-12">
-    <span class="col-12">TotalDeaths : </span>
-    <input class="my-3" id="TotalDeaths" type="text" name="display" disabled>
+    <span class="col-12">totaldeaths : </span>
+    <input class="my-3" id="totaldeaths" type="text" name="display" disabled>
     </div>
     
     <div class="col-12">
-    <span>NewRecovered : </span>
-    <input class="my-3" id="NewRecovered" type="text" name="display" disabled>
+    <span>newrecovered : </span>
+    <input class="my-3" id="newrecovered" type="text" name="display" disabled>
     </div>
     
     <div class="col-12">
-    <span>TotalRecovered : </span>
-    <input class="my-3" id="TotalRecovered" type="text" name="display" disabled>
+    <span>totalrecovered : </span>
+    <input class="my-3" id="totalrecovered" type="text" name="display" disabled>
     </div>
     
     <div class="col-12">
@@ -146,65 +146,65 @@
     <script type="text/javascript">
     
     
-    let Countryname = document.getElementById("Country_name");
-    let Newconfirmed = document.getElementById("NewConfirmed");
-    let Totalconfirmed = document.getElementById("TotalConfirmed");
-    let Newdeaths = document.getElementById("NewDeaths");
-    let Totaldeaths = document.getElementById("TotalDeaths");
-    let Newrecovered = document.getElementById("NewRecovered");
-    let Totalrecovered = document.getElementById("TotalRecovered");
-    let Time = document.getElementById("date");
-    let Selectbox  = document.getElementById("SelectBox");
-    let h6 = document.querySelector("h6");
+    let countryname = document.getelementbyid("country_name");
+    let newconfirmed = document.getelementbyid("newconfirmed");
+    let totalconfirmed = document.getelementbyid("totalconfirmed");
+    let newdeaths = document.getelementbyid("newdeaths");
+    let totaldeaths = document.getelementbyid("totaldeaths");
+    let newrecovered = document.getelementbyid("newrecovered");
+    let totalrecovered = document.getelementbyid("totalrecovered");
+    let time = document.getelementbyid("date");
+    let selectbox  = document.getelementbyid("selectbox");
+    let h6 = document.queryselector("h6");
     
-    //---Dynamic-Clock---//
+    //---dynamic-clock---//
     
-  /*  setInterval(()=>{
-    let time = new Date() ;
+  /*  setinterval(()=>{
+    let time = new date() ;
     
-    let hours = time.getHours();
-    let minutes = time.getMinutes();
-    let seconds = time.getSeconds();
+    let hours = time.gethours();
+    let minutes = time.getminutes();
+    let seconds = time.getseconds();
     
     const timeshow = hours + " : " + minutes  + " : " + seconds ;
     
-    Time.value = timeshow;
+    time.value = timeshow;
     
     },1000); 
     */
     
   
    
-    Selectbox.addEventListener("change",()=>{
+    selectbox.addeventlistener("change",()=>{
     
-     if(Selectbox.value == "Bangladesh"){
+     if(selectbox.value == "bangladesh"){
      
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
        
-       return apidata.Json();
+       return apidata.json();
        
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[`${13}`];
+       const mydata = covidapi.countries[`${13}`];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "Bangladesh"){
+       if(selectbox.value == "bangladesh"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -214,24 +214,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[13];
+       const mydata = covidapi.countries[13];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "India"){
+       if(selectbox.value == "india"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -241,24 +241,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[76];
+       const mydata = covidapi.countries[76];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "Indonesia"){
+       if(selectbox.value == "indonesia"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -268,24 +268,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[77];
+       const mydata = covidapi.countries[77];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "Nepal"){
+       if(selectbox.value == "nepal"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -295,24 +295,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[120];
+       const mydata = covidapi.countries[120];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "Pakistan"){
+       if(selectbox.value == "pakistan"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -322,24 +322,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[128];
+       const mydata = covidapi.countries[128];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "Srilanka"){
+       if(selectbox.value == "srilanka"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -349,24 +349,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Countries[161];
+       const mydata = covidapi.countries[161];
        
-       Countryname.value = Mydata.Country ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = Mydata.Date ;
+       countryname.value = mydata.country ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = mydata.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
        };
        
-       if(Selectbox.value == "Global"){
+       if(selectbox.value == "global"){
        
        fetch('https:api.covid19api.com/summary')
        .then((apidata)=>{
@@ -376,24 +376,24 @@
        }).then((covidapi)=>{
        
        //console.log(covidapi);
-       const Mydata = covidapi.Global;
+       const mydata = covidapi.global;
        
-       Countryname.value = "Global" ;
-       Newconfirmed.value = Mydata.NewConfirmed ;
-       Totalconfirmed.value = Mydata.TotalConfirmed ;
-       Newdeaths.value = Mydata.NewDeaths
-       Totaldeaths.value = Mydata.TotalDeaths ;
-       Newrecovered.value = Mydata.NewRecovered ;
-       Totalrecovered.value = Mydata.TotalRecovered ;
-       Time.value = covidapi.Date ;
+       countryname.value = "global" ;
+       newconfirmed.value = mydata.newconfirmed ;
+       totalconfirmed.value = mydata.totalconfirmed ;
+       newdeaths.value = mydata.newdeaths
+       totaldeaths.value = mydata.totaldeaths ;
+       newrecovered.value = mydata.newrecovered ;
+       totalrecovered.value = mydata.totalrecovered ;
+       time.value = covidapi.date ;
        
        }).catch((error)=>{
-       h6.innerHTML = error;
+       h6.innerhtml = error;
        });
        
      };
      
-     if(Selectbox.value == "Oman"){
+     if(selectbox.value == "oman"){
      
      fetch('https:api.covid19api.com/summary')
      .then((apidata)=>{
@@ -403,25 +403,25 @@
      }).then((covidapi)=>{
      
      //console.log(covidapi);
-     const Mydata = covidapi.Countries[127];
+     const mydata = covidapi.countries[127];
      
-     Countryname.value = Mydata.Country ;
-     Newconfirmed.value = Mydata.NewConfirmed ;
-     Totalconfirmed.value = Mydata.TotalConfirmed ;
-     Newdeaths.value = Mydata.NewDeaths
-     Totaldeaths.value = Mydata.TotalDeaths ;
-     Newrecovered.value = Mydata.NewRecovered ;
-     Totalrecovered.value = Mydata.TotalRecovered ;
-     Time.value = Mydata.Date ;
+     countryname.value = mydata.country ;
+     newconfirmed.value = mydata.newconfirmed ;
+     totalconfirmed.value = mydata.totalconfirmed ;
+     newdeaths.value = mydata.newdeaths
+     totaldeaths.value = mydata.totaldeaths ;
+     newrecovered.value = mydata.newrecovered ;
+     totalrecovered.value = mydata.totalrecovered ;
+     time.value = mydata.date ;
      
      }).catch((error)=>{
-     h6.innerHTML = error;
+     h6.innerhtml = error;
      });
      
      };
      
      
-     if(Selectbox.value == "Qatar"){
+     if(selectbox.value == "qatar"){
      
      fetch('https:api.covid19api.com/summary')
      .then((apidata)=>{
@@ -431,25 +431,25 @@
      }).then((covidapi)=>{
      
      //console.log(covidapi);
-     const Mydata = covidapi.Countries[137];
+     const mydata = covidapi.countries[137];
      
-     Countryname.value = Mydata.Country ;
-     Newconfirmed.value = Mydata.NewConfirmed ;
-     Totalconfirmed.value = Mydata.TotalConfirmed ;
-     Newdeaths.value = Mydata.NewDeaths
-     Totaldeaths.value = Mydata.TotalDeaths ;
-     Newrecovered.value = Mydata.NewRecovered ;
-     Totalrecovered.value = Mydata.TotalRecovered ;
-     Time.value = Mydata.Date ;
+     countryname.value = mydata.country ;
+     newconfirmed.value = mydata.newconfirmed ;
+     totalconfirmed.value = mydata.totalconfirmed ;
+     newdeaths.value = mydata.newdeaths
+     totaldeaths.value = mydata.totaldeaths ;
+     newrecovered.value = mydata.newrecovered ;
+     totalrecovered.value = mydata.totalrecovered ;
+     time.value = mydata.date ;
      
      }).catch((error)=>{
-     h6.innerHTML = error;
+     h6.innerhtml = error;
      });
      
      };
      
      
-     if(Selectbox.value == "Singapore"){
+     if(selectbox.value == "singapore"){
      
      fetch('https:api.covid19api.com/summary')
      .then((apidata)=>{
@@ -459,24 +459,24 @@
      }).then((covidapi)=>{
      
      //console.log(covidapi);
-     const Mydata = covidapi.Countries[153];
+     const mydata = covidapi.countries[154];
      
-     Countryname.value = Mydata.Country ;
-     Newconfirmed.value = Mydata.NewConfirmed ;
-     Totalconfirmed.value = Mydata.TotalConfirmed ;
-     Newdeaths.value = Mydata.NewDeaths
-     Totaldeaths.value = Mydata.TotalDeaths ;
-     Newrecovered.value = Mydata.NewRecovered ;
-     Totalrecovered.value = Mydata.TotalRecovered ;
-     Time.value = Mydata.Date ;
+     countryname.value = mydata.country ;
+     newconfirmed.value = mydata.newconfirmed ;
+     totalconfirmed.value = mydata.totalconfirmed ;
+     newdeaths.value = mydata.newdeaths
+     totaldeaths.value = mydata.totaldeaths ;
+     newrecovered.value = mydata.newrecovered ;
+     totalrecovered.value = mydata.totalrecovered ;
+     time.value = mydata.date ;
      
      }).catch((error)=>{
-     h6.innerHTML = error;
+     h6.innerhtml = error;
      });
      
      };
      
-     if(Selectbox.value == "Afghanistan"){
+     if(selectbox.value == "afghanistan"){
      
      fetch('https:api.covid19api.com/summary')
      .then((apidata)=>{
@@ -486,19 +486,19 @@
      }).then((covidapi)=>{
      
      //console.log(covidapi);
-     const Mydata = covidapi.Countries[0];
+     const mydata = covidapi.countries[0];
      
-     Countryname.value = Mydata.Country ;
-     Newconfirmed.value = Mydata.NewConfirmed ;
-     Totalconfirmed.value = Mydata.TotalConfirmed ;
-     Newdeaths.value = Mydata.NewDeaths
-     Totaldeaths.value = Mydata.TotalDeaths ;
-     Newrecovered.value = Mydata.NewRecovered ;
-     Totalrecovered.value = Mydata.TotalRecovered ;
-     Time.value = Mydata.Date ;
+     countryname.value = mydata.country ;
+     newconfirmed.value = mydata.newconfirmed ;
+     totalconfirmed.value = mydata.totalconfirmed ;
+     newdeaths.value = mydata.newdeaths
+     totaldeaths.value = mydata.totaldeaths ;
+     newrecovered.value = mydata.newrecovered ;
+   totalrecovered.value = mydata.totalrecovered ;
+     time.value = mydata.date ;
      
      }).catch((error)=>{
-     h6.innerHTML = error;
+     h6.innerhtml = error;
      });
      
      };
